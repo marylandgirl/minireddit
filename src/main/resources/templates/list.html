@@ -8,7 +8,14 @@
 <!-- Commenting this block out for now
 Kim this works!
 -->
-<a href="/add">Add an address</a><br />
+<a href="/add">Add a Mini-Reddit Entry</a><br />
+<table>
+    <tr>
+        <th>Description</th>
+        <th>URL</th>
+        <th>Name</th>
+        <th>Date</th>
+    </tr>
 <tr th:each="reditrec :${reditrecs}">
     <td th:text="${reditrec.title}"></td>
     <td th:text="${reditrec.url}"></td>
@@ -16,6 +23,6 @@ Kim this works!
     <td th:text="${reditrec.curDate}"></td>
  </tr>
 
-
+</table>
 </body>
 </html>
