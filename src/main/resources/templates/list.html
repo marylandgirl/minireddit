@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Mini Reddit Listing</title>
+</head>
+<body>
+<!-- Commenting this block out for now
+Kim this works!
+-->
+<tr th:each="reditrec :${reditrecs}">
+    <td th:text="${reditrec.title}"></td>
+    <td th:text="${reditrec.url}"></td>
+    <td th:text="${reditrec.name}"></td>
+    <td th:text="${reditrec.curDate}"></td>
+ </tr>
+
+
+</body>
+</html>
