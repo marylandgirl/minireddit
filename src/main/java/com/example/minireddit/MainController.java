@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @Controller
 public class MainController {
 
@@ -20,9 +22,18 @@ public class MainController {
         return "list";
     }
 
-    @GetMapping
+    @GetMapping("/add")
     public String reditRecForm(Model model){
         model.addAttribute("reditrec", new ReditRec());
         return "reditRecForm";
+    }
+
+    @PostMapping("/process")
+    public String processForm(@Valid ReditRec reditrec, BindingResult result){
+        if (result.hasErrors()){
+            return "reditRecForm";
+        }
+        miniRedditRepository.save(reditrec);
+        return "redirect:/";
     }
 }
