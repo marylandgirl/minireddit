@@ -26,6 +26,9 @@ public class ReditRec {
     @Size(min = 10)
     private String curDate;
 
+    public ReditRec() {
+    }
+
     public long getId() {
         return id;
     }

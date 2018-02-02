@@ -26,7 +26,8 @@ public class MainController {
     }
 
     @PostMapping("/process")
-    public String processForm(@Valid  @ModelAttribute("reditrec") ReditRec reditrec, BindingResult result){
+//    public String processForm(@Valid  @ModelAttribute("reditrec") ReditRec reditrec, BindingResult result){
+    public String processForm(@Valid ReditRec reditrec, BindingResult result){
         if (result.hasErrors()){
             return "reditRecForm";
         }
